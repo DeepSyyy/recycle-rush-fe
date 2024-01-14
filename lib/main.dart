@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_1.dart';
-import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_2.dart';
-import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_3.dart';
-import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_4.dart';
-import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_5.dart';
+import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +28,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: RecycleRushOnboardingWidgetFifth(),
+        body: RecycleRushViewOnboarding(),
       ),
     );
   }
