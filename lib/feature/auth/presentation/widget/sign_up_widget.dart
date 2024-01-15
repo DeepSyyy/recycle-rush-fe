@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
 import 'package:recycle_rush_fe/core/utils/button.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/recycle_rush_tf_general.dart';
 
-class RecycleRushSignInWidget extends StatefulWidget {
-  static const routeName = '/sign-in';
-  const RecycleRushSignInWidget({super.key});
+class RecycleRushSignUpWidget extends StatefulWidget {
+  static const routeName = '/sign-up';
+  const RecycleRushSignUpWidget({super.key});
 
   @override
-  State<RecycleRushSignInWidget> createState() =>
-      _RecycleRushSignInWidgetState();
+  State<RecycleRushSignUpWidget> createState() =>
+      _RecycleRushSignUpWidgetState();
 }
 
-class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
+class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,7 +35,7 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    "Sign In",
+                    "Sign Up",
                     style: RecycleRushHeadingTypography.medium(),
                   ),
                   Text(
@@ -45,27 +45,14 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                   const SizedBox(height: 20),
                   const RecycleRushTfAuthGeneral(),
                   const SizedBox(height: 16),
-                  const RecycleRushTfPassword(
-                    textLabel: "Password",
-                  ),
+                  const RecycleRushTfPassword(textLabel: "Password"),
                   const SizedBox(height: 16),
-                  Text(
-                    "Forgot Password?",
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      height: 1.2,
-                      letterSpacing: 0,
-                      color: RecycleRushColor.gren500,
-                      decoration: TextDecoration.underline,
-                      decorationColor: RecycleRushColor.gren500,
-                    ),
-                  ),
+                  const RecycleRushTfPassword(textLabel: "Confirm Password"),
                   const SizedBox(height: 40),
                   const RecycleRushElevatedButton(
                     btnColor: RecycleRushColor.gren400,
                     btnHeight: 48,
-                    btnText: "Sign In",
+                    btnText: "Sign Up",
                   ),
                   const SizedBox(height: 24),
                   Row(
@@ -114,7 +101,7 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                         Image.asset("assets/images/google-icon.png"),
                         const SizedBox(width: 12),
                         Text(
-                          "Continue with Google",
+                          "Countinue with Google",
                           style: RecycleRushHeadingTypography.xxSmall(
                             color: AppColor.textPrimary,
                           ),
@@ -131,7 +118,7 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "New to Recyle Rush? ",
+                    "Already have an account? ",
                     style: RecycleRushLabelTypography.small(
                       color: AppColor.textPrimary,
                     ),
@@ -139,9 +126,9 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                   const SizedBox(width: 8),
                   InkWell(
                     onTap: () =>
-                        Navigator.pushReplacementNamed(context, '/sign-up'),
+                        Navigator.pushReplacementNamed(context, '/sign-in'),
                     child: Text(
-                      "Sign Up",
+                      "Sign In",
                       style: GoogleFonts.plusJakartaSans(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,

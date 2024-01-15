@@ -30,6 +30,7 @@ class RecycleRushElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
+          onPrimary: btnColor,
           backgroundColor: btnColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
