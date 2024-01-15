@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:recycle_rush_fe/core/utils/button_auth.dart';
+import 'package:recycle_rush_fe/core/styles/app_color.dart';
+import 'package:recycle_rush_fe/core/styles/typography.dart';
+import 'package:recycle_rush_fe/core/utils/button.dart';
 
 class RecycleRushOnboardingWidgetsixth extends StatelessWidget {
   const RecycleRushOnboardingWidgetsixth({super.key});
@@ -16,19 +17,20 @@ class RecycleRushOnboardingWidgetsixth extends StatelessWidget {
           const SizedBox(height: 51),
           Text(
             "Ready?",
-            style: GoogleFonts.spaceGrotesk(
-              fontSize: 64,
-              fontWeight: FontWeight.w700,
-            ),
+            style: RecycleRushHeadingTypography.megaLarge(
+                color: AppColor.textPrimary),
           ),
-          const SizedBox(height: 64),
-          const RecycleRushElevatedButtonAuth(
-            isLogin: true,
+          const SizedBox(height: 22),
+          Text(
+            "Let's start the journey!",
+            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
+            textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 8),
-          const RecycleRushElevatedButtonAuth(
-            isLogin: false,
-          )
+          const SizedBox(height: 33),
+          const RecycleRushElevatedButton(
+              btnHeight: 53,
+              btnColor: AppColor.primary,
+              btnText: "Get Started!"),
         ],
       ),
     );

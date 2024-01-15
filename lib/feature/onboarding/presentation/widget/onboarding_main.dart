@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recycle_rush_fe/core/config/app_color.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:recycle_rush_fe/core/styles/typography.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_1.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_2.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboarding_3.dart';
@@ -105,15 +105,13 @@ class _RecycleRushOnboardingWidgetMainState
                             const SizedBox(width: 8),
                             Text(
                               "Back",
-                              style: GoogleFonts.plusJakartaSans(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
+                              style: RecycleRushSubHeadingTypography.medium(
                                   color: AppColor.textPrimary),
                             ),
                           ],
                         ),
                       ),
-                    if (currentPage == 0) const SizedBox(width: 28),
+                    if (currentPage == 0) const SizedBox(width: 100),
                     Row(
                       children: List.generate(
                         pages.length,
@@ -121,7 +119,7 @@ class _RecycleRushOnboardingWidgetMainState
                       ),
                     ),
                     if (currentPage == pages.length - 1)
-                      const SizedBox(width: 28),
+                      const SizedBox(width: 68),
                     if (currentPage != pages.length - 1)
                       Padding(
                         padding: currentPage == 0
@@ -135,9 +133,7 @@ class _RecycleRushOnboardingWidgetMainState
                             children: [
                               Text(
                                 "Next",
-                                style: GoogleFonts.plusJakartaSans(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
+                                style: RecycleRushSubHeadingTypography.medium(
                                     color: AppColor.textPrimary),
                               ),
                               const SizedBox(width: 8),

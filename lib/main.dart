@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_in_widget.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        body: RecycleRushViewOnboarding(),
+        body: RecycleRushSignInWidget(),
       ),
     );
   }

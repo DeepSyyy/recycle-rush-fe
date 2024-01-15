@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:recycle_rush_fe/core/styles/app_color.dart';
+import 'package:recycle_rush_fe/core/styles/typography.dart';
 
 class RecycleRushOnboardingWidgetSecond extends StatelessWidget {
   const RecycleRushOnboardingWidgetSecond({super.key});
@@ -19,10 +20,8 @@ class RecycleRushOnboardingWidgetSecond extends StatelessWidget {
         const SizedBox(height: 51),
         Text(
           "TrashGo",
-          style: GoogleFonts.spaceGrotesk(
-            fontSize: 64,
-            fontWeight: FontWeight.w700,
-          ),
+          style: RecycleRushHeadingTypography.megaLarge(
+              color: AppColor.textPrimary),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 22),
@@ -30,10 +29,7 @@ class RecycleRushOnboardingWidgetSecond extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 22),
           child: Text(
             "Berpetualang untuk mengumpulkan gambar sampah di lokasi tertentu",
-            style: GoogleFonts.plusJakartaSans(
-              fontSize: 16,
-              fontWeight: FontWeight.w300,
-            ),
+            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
             textAlign: TextAlign.center,
           ),
         ),

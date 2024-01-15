@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:recycle_rush_fe/core/styles/app_color.dart';
+import 'package:recycle_rush_fe/core/styles/typography.dart';
 
 class RecycleRushOnboardingWidgetFourth extends StatelessWidget {
   const RecycleRushOnboardingWidgetFourth({super.key});
@@ -17,18 +18,13 @@ class RecycleRushOnboardingWidgetFourth extends StatelessWidget {
           const SizedBox(height: 51),
           Text(
             "XP",
-            style: GoogleFonts.spaceGrotesk(
-              fontSize: 64,
-              fontWeight: FontWeight.w700,
-            ),
+            style: RecycleRushHeadingTypography.megaLarge(
+                color: AppColor.textPrimary),
           ),
           const SizedBox(height: 22),
           Text(
             "Meningkatkan level untuk mengadirkan Quest baru",
-            style: GoogleFonts.plusJakartaSans(
-              fontSize: 16,
-              fontWeight: FontWeight.w300,
-            ),
+            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
             textAlign: TextAlign.center,
           )
         ],

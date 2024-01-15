@@ -3,6 +3,7 @@ import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/onboardin
 
 class RecycleRushViewOnboarding extends StatelessWidget {
   const RecycleRushViewOnboarding({super.key});
+  static const routeName = '/onboarding';
 
   @override
   Widget build(BuildContext context) {
