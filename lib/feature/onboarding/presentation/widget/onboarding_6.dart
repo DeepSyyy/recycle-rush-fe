@@ -28,9 +28,12 @@ class RecycleRushOnboardingWidgetsixth extends StatelessWidget {
           ),
           const SizedBox(height: 33),
           const RecycleRushElevatedButton(
-              btnHeight: 53,
-              btnColor: AppColor.primary,
-              btnText: "Get Started!"),
+            btnHeight: 53,
+            btnColor: AppColor.primary,
+            btnText: "Get Started!",
+            routeName: '/sign-in',
+            isEnabled: true,
+          ),
         ],
       ),
     );

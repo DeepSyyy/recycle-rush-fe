@@ -16,6 +16,25 @@ class RecycleRushSignInWidget extends StatefulWidget {
 }
 
 class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  bool _isEnableSignIn() {
+    return _emailController.text.isNotEmpty &&
+        _passwordController.text.isNotEmpty;
+  }
+
+  void _updateButtonState() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,10 +62,15 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                     style: RecycleRushParagraph.medium(),
                   ),
                   const SizedBox(height: 20),
-                  const RecycleRushTfAuthGeneral(),
+                  RecycleRushTfAuthGeneral(
+                    textEditingController: _emailController,
+                    onChanged: (_) => _updateButtonState(),
+                  ),
                   const SizedBox(height: 16),
-                  const RecycleRushTfPassword(
+                  RecycleRushTfPassword(
+                    passwordC: _passwordController,
                     textLabel: "Password",
+                    onChanged: (_) => _updateButtonState(),
                   ),
                   const SizedBox(height: 16),
                   Text(
@@ -62,10 +86,11 @@ class _RecycleRushSignInWidgetState extends State<RecycleRushSignInWidget> {
                     ),
                   ),
                   const SizedBox(height: 40),
-                  const RecycleRushElevatedButton(
+                  RecycleRushElevatedButton(
                     btnColor: RecycleRushColor.gren400,
                     btnHeight: 48,
                     btnText: "Sign In",
+                    isEnabled: _isEnableSignIn(),
                   ),
                   const SizedBox(height: 24),
                   Row(

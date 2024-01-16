@@ -6,13 +6,19 @@ import 'package:recycle_rush_fe/core/styles/typography.dart';
 class RecycleRushTfAuthGeneral extends StatelessWidget {
   const RecycleRushTfAuthGeneral({
     super.key,
+    required this.textEditingController,
+    this.onChanged,
   });
+  final TextEditingController textEditingController;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
       child: TextFormField(
+        onChanged: onChanged,
+        controller: textEditingController,
         style: RecycleRushLabelTypography.medium(
             color: AppColor.textPrimary.withOpacity(0.6)),
         decoration: InputDecoration(
@@ -47,8 +53,12 @@ class RecycleRushTfPassword extends StatefulWidget {
   const RecycleRushTfPassword({
     super.key,
     required this.textLabel,
+    required this.passwordC,
+    this.onChanged,
   });
   final String textLabel;
+  final TextEditingController passwordC;
+  final Function(String)? onChanged;
 
   @override
   State<RecycleRushTfPassword> createState() => _RecycleRushTfPasswordState();
@@ -61,6 +71,8 @@ class _RecycleRushTfPasswordState extends State<RecycleRushTfPassword> {
     return SizedBox(
       height: 48,
       child: TextFormField(
+        controller: widget.passwordC,
+        onChanged: widget.onChanged,
         obscureText: obscureText,
         style: RecycleRushLabelTypography.medium(
             color: AppColor.textPrimary.withOpacity(0.6)),

@@ -16,6 +16,29 @@ class RecycleRushSignUpWidget extends StatefulWidget {
 }
 
 class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  bool _isEnableSignIn() {
+    return _emailController.text.isNotEmpty &&
+        _passwordController.text.isNotEmpty &&
+        _confirmPasswordController.text.isNotEmpty;
+  }
+
+  void _updateButtonState() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,16 +66,28 @@ class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
                     style: RecycleRushParagraph.medium(),
                   ),
                   const SizedBox(height: 20),
-                  const RecycleRushTfAuthGeneral(),
+                  RecycleRushTfAuthGeneral(
+                    textEditingController: _emailController,
+                    onChanged: (_) => _updateButtonState(),
+                  ),
                   const SizedBox(height: 16),
-                  const RecycleRushTfPassword(textLabel: "Password"),
+                  RecycleRushTfPassword(
+                    textLabel: "Password",
+                    passwordC: _passwordController,
+                    onChanged: (_) => _updateButtonState(),
+                  ),
                   const SizedBox(height: 16),
-                  const RecycleRushTfPassword(textLabel: "Confirm Password"),
+                  RecycleRushTfPassword(
+                    textLabel: "Confirm Password",
+                    passwordC: _confirmPasswordController,
+                    onChanged: (_) => _updateButtonState(),
+                  ),
                   const SizedBox(height: 40),
-                  const RecycleRushElevatedButton(
+                  RecycleRushElevatedButton(
                     btnColor: RecycleRushColor.gren400,
                     btnHeight: 48,
                     btnText: "Sign Up",
+                    isEnabled: _isEnableSignIn(),
                   ),
                   const SizedBox(height: 24),
                   Row(

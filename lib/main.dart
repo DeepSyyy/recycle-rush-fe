@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:recycle_rush_fe/feature/auth/presentation/view/auth_view.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_in_widget.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_up_widget.dart';
+import 'package:recycle_rush_fe/feature/home/presentation/widget/home_widget.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
 
 void main() {
@@ -20,8 +22,11 @@ class MyApp extends StatelessWidget {
             const RecycleRushSignUpWidget(),
         RecycleRushViewOnboarding.routeName: (context) =>
             const RecycleRushViewOnboarding(),
+        RecycleRushViewAuth.routeName: (context) => const RecycleRushViewAuth(),
+        RecycleRushWidgetHome.routeName: (context) =>
+            const RecycleRushWidgetHome(),
       },
-      initialRoute: RecycleRushSignInWidget.routeName,
+      initialRoute: RecycleRushWidgetHome.routeName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
