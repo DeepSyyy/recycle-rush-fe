@@ -120,7 +120,7 @@ class RecycleRushWidgetHome extends StatelessWidget {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff202020),
+                      color: const Color(0xff202020),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
