@@ -3,6 +3,8 @@ import 'package:recycle_rush_fe/feature/auth/presentation/view/auth_view.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_in_widget.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_up_widget.dart';
 import 'package:recycle_rush_fe/feature/home/presentation/widget/home_widget.dart';
+import 'package:recycle_rush_fe/feature/navigation_bar/presentation/view/nav_bar_view.dart';
+import 'package:recycle_rush_fe/feature/navigation_bar/presentation/widget/nav_bar_widget.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
 
 void main() {
@@ -25,8 +27,10 @@ class MyApp extends StatelessWidget {
         RecycleRushViewAuth.routeName: (context) => const RecycleRushViewAuth(),
         RecycleRushWidgetHome.routeName: (context) =>
             const RecycleRushWidgetHome(),
+        RecycleRushViewNavBar.routeName: (context) =>
+            const RecycleRushViewNavBar(),
       },
-      initialRoute: RecycleRushWidgetHome.routeName,
+      initialRoute: RecycleRushViewNavBar.routeName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

@@ -120,7 +120,7 @@ class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       onPrimary: AppColor.textPrimary,
-                      backgroundColor: Color(0xffffffff),
+                      backgroundColor: const Color(0xffffffff),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),

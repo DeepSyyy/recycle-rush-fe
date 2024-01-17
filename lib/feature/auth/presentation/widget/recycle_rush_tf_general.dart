@@ -30,7 +30,7 @@ class RecycleRushTfAuthGeneral extends StatelessWidget {
           floatingLabelAlignment: FloatingLabelAlignment.start,
           floatingLabelStyle: RecycleRushLabelTypography.medium(),
           filled: true,
-          fillColor: Color(0xffFAFAFA),
+          fillColor: const Color(0xffFAFAFA),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
