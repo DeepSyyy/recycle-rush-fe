@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
+import 'package:recycle_rush_fe/feature/quests/presentation/widget/card_my_quest_widget.dart';
 
 class RecycleRushWidgetHome extends StatelessWidget {
   const RecycleRushWidgetHome({super.key});
@@ -11,7 +12,6 @@ class RecycleRushWidgetHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: RecycleRushColor.green,
       body: SafeArea(
         bottom: false,
         child: NestedScrollView(
@@ -77,20 +77,48 @@ class RecycleRushWidgetHome extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                RecycleRushCardQuest(),
-                SizedBox(width: 16),
-                RecycleRushCardQuest(),
-                SizedBox(width: 16),
-                RecycleRushCardQuest(),
-                SizedBox(width: 16),
-                RecycleRushCardQuest(),
+                RecycleRushCardMyQuest(
+                  description: "Gather 10 pieces of aluminum cans",
+                  title: "Cans collector",
+                  coins: 10000,
+                  completed: 5,
+                  target: 10,
+                  colorMode: "dark",
+                ),
+                const SizedBox(width: 16),
+                RecycleRushCardMyQuest(
+                  description: "Collect 10 pieces of plastic bags",
+                  title: "Plastic Paradise",
+                  coins: 1000,
+                  completed: 5,
+                  target: 10,
+                  colorMode: "blue",
+                ),
+                const SizedBox(width: 16),
+                RecycleRushCardMyQuest(
+                  description: "Pick up  30 cigarette butts",
+                  title: "Cigarette Cleanup",
+                  coins: 3000,
+                  completed: 8,
+                  target: 30,
+                  colorMode: "yellow",
+                ),
+                const SizedBox(width: 16),
+                RecycleRushCardMyQuest(
+                  description: "Collect 20  paper or cardboard",
+                  title: "Paper Patrol",
+                  coins: 10000,
+                  completed: 3,
+                  target: 10,
+                  colorMode: "green",
+                ),
               ],
             ),
           )
@@ -175,107 +203,6 @@ class RecycleRushWidgetHome extends StatelessWidget {
           style: RecycleRushHeadingTypography.large(),
         )
       ],
-    );
-  }
-}
-
-class RecycleRushCardQuest extends StatelessWidget {
-  const RecycleRushCardQuest({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 120,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: const Color(0xffF4F4F6),
-      ),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(),
-              color: Colors.black,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Gather 10 pieces of aluminum cans",
-                  overflow: TextOverflow.clip,
-                  style: RecycleRushSubHeadingTypography.large(
-                      color: Colors.white),
-                ),
-                const SizedBox(height: 21),
-                Row(
-                  children: [
-                    const Icon(
-                      IconsaxBold.buy_crypto,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      "10.000",
-                      style: RecycleRushParagraph.small(color: Colors.white),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  "Cans collector",
-                  style: RecycleRushLabelTypography.xSmall(
-                      color: AppColor.textSecondary.withOpacity(0.8)),
-                ),
-              ],
-            ),
-          ),
-          _progressIndicator(
-            numerator: 7,
-            denominator: 10,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Padding _progressIndicator({
-    required double numerator,
-    required double denominator,
-  }) {
-    double decimal = numerator / denominator;
-    String percentage = "${(decimal * 100).toInt()}";
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 2,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "${percentage}%",
-            style: RecycleRushLabelTypography.small(),
-          ),
-          Container(
-            width: 65,
-            height: 4,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: AppColor.textPrimary,
-            ),
-            child: LinearProgressIndicator(
-              value: decimal,
-              color: AppColor.textPrimary,
-              backgroundColor: Colors.grey,
-              borderRadius: BorderRadius.circular(2),
-            ),
-          )
-        ],
-      ),
     );
   }
 }

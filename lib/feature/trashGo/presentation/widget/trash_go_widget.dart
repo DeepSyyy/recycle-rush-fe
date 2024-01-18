@@ -54,20 +54,20 @@ class _RecycleRushWidgetTrashGoState extends State<RecycleRushWidgetTrashGo> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          shape: const CircleBorder(),
-          backgroundColor: AppColor.textPrimary,
-          child: const Icon(
-            IconsaxBold.camera_slash,
-            color: Colors.white,
-          ),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: const CircleBorder(),
+        backgroundColor: AppColor.textPrimary,
+        child: const Icon(
+          IconsaxBold.camera_slash,
+          color: Colors.white,
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        backgroundColor: RecycleRushColor.green,
-        body: Column(
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      backgroundColor: RecycleRushColor.green,
+      body: SafeArea(
+        child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 26),

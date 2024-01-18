@@ -9,6 +9,7 @@ import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
 import 'package:recycle_rush_fe/feature/navigation_bar/presentation/view/nav_bar_view.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/splash_screen.dart';
+import 'package:recycle_rush_fe/feature/quests/quest_detail/presentation/view/quest_detail_view.dart';
 import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 void main() {
@@ -38,9 +39,12 @@ class MyApp extends StatelessWidget {
             const RecycleRushViewCoins(),
         RecyleRushWidgetTransfer.routeName: (context) =>
             const RecyleRushWidgetTransfer(),
+        RecycleRushViewQuestDetail.routeName: (
+          context,
+        ) =>
+            const RecycleRushViewQuestDetail(),
       },
-      // initialRoute: RecycleRushViewHome.routeName,
-      home: const RecycleRushWidgetCoins(),
+      initialRoute: RecycleRushViewNavBar.routeName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

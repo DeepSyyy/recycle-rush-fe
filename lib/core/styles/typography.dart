@@ -84,6 +84,14 @@ class RecycleRushSubHeadingTypography {
   final Color color;
 
   get textColor => color;
+  static TextStyle mega({Color? color}) => GoogleFonts.plusJakartaSans(
+        fontSize: 48,
+        fontWeight: FontWeight.w700,
+        height: 1.2,
+        letterSpacing: 0,
+        color: color,
+      );
+
   static TextStyle xxLarge({Color? color}) => GoogleFonts.plusJakartaSans(
         fontSize: 24,
         fontWeight: FontWeight.w700,

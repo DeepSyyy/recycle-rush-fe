@@ -1,8 +1,10 @@
 import 'package:ficonsax/ficonsax.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
 import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
+import 'package:recycle_rush_fe/feature/quests/presentation/view/quests_view.dart';
 import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 class RecycleRushWidgetNavbar extends StatefulWidget {
@@ -17,9 +19,7 @@ class _RecycleRushWidgetNavbarState extends State<RecycleRushWidgetNavbar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     RecycleRushViewHome(),
-    Text(
-      'Quest',
-    ),
+    RecycleRushQuestsView(),
     RecycleRushWidgetTrashGo(),
     Text(
       'Clan',
@@ -30,17 +30,25 @@ class _RecycleRushWidgetNavbarState extends State<RecycleRushWidgetNavbar> {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        // backgroundColor: Colors.white,
-        body: Stack(
+    return Scaffold(
+      backgroundColor: RecycleRushColor.green,
+      body: SafeArea(
+        bottom: false,
+        child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
             Center(
               child: _widgetOptions.elementAt(_selectedIndex),
             ),
             Container(
-              margin: const EdgeInsets.all(16),
+              margin: EdgeInsets.only(
+                bottom: MediaQuery.of(context).padding.bottom == 0
+                    ? 16
+                    : MediaQuery.of(context).padding.bottom,
+                left: 16,
+                right: 16,
+                top: 16,
+              ),
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(42),
@@ -49,7 +57,7 @@ class _RecycleRushWidgetNavbarState extends State<RecycleRushWidgetNavbar> {
               child: GNav(
                 tabBackgroundColor: const Color(0xff363636),
                 activeColor: Colors.white,
-                duration: const Duration(milliseconds: 1000),
+                duration: const Duration(milliseconds: 100),
                 gap: 8,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
