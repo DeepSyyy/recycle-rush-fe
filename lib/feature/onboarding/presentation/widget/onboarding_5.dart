@@ -22,10 +22,13 @@ class RecycleRushOnboardingWidgetFifth extends StatelessWidget {
                 color: AppColor.textPrimary),
           ),
           const SizedBox(height: 22),
-          Text(
-            "Saldo e-wallet yang dapat ditukar dengan uang",
-            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
-            textAlign: TextAlign.center,
+          SizedBox(
+            width: 287,
+            child: Text(
+              "From quests that you have done, you can exchange your coins to E-Wallet balance anytime!",
+              style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
+              textAlign: TextAlign.center,
+            ),
           )
         ],
       ),

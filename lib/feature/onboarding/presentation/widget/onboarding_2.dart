@@ -27,10 +27,13 @@ class RecycleRushOnboardingWidgetSecond extends StatelessWidget {
         const SizedBox(height: 22),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22),
-          child: Text(
-            "Berpetualang untuk mengumpulkan gambar sampah di lokasi tertentu",
-            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
-            textAlign: TextAlign.center,
+          child: SizedBox(
+            width: 287,
+            child: Text(
+              "You can take some picture of garbage around you and get extra XP to open the Quests",
+              style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ],

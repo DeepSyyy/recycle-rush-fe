@@ -23,10 +23,13 @@ class RecycleRushOnboardingWidgetFirst extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 22),
-          Text(
-            "Lorem ipsum dolor sit amet consectetur. Tortor mi elementum eu viverra dignissim sagittis sollicitudin. Vivamus tortor felis.",
-            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
-            textAlign: TextAlign.center,
+          SizedBox(
+            width: 287,
+            child: Text(
+              "Welcome to Recycle Rush, let’s explore many things you can do in this app.",
+              style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
