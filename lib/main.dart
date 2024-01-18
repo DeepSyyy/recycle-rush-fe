@@ -5,6 +5,7 @@ import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_up_widget.
 import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
 import 'package:recycle_rush_fe/feature/navigation_bar/presentation/view/nav_bar_view.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
+import 'package:recycle_rush_fe/feature/onboarding/presentation/widget/splash_screen.dart';
 import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 void main() {
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         RecycleRushWidgetTrashGo.routeName: (context) =>
             const RecycleRushWidgetTrashGo(),
       },
-      initialRoute: RecycleRushViewHome.routeName,
+      // initialRoute: RecycleRushViewHome.routeName,
+      home: const RecycleRushWidgetSplashScreen(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

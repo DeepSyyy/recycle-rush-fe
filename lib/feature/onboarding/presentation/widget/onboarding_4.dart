@@ -22,10 +22,13 @@ class RecycleRushOnboardingWidgetFourth extends StatelessWidget {
                 color: AppColor.textPrimary),
           ),
           const SizedBox(height: 22),
-          Text(
-            "Meningkatkan level untuk mengadirkan Quest baru",
-            style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
-            textAlign: TextAlign.center,
+          SizedBox(
+            width: 287,
+            child: Text(
+              "Earn XP from taking pictures with TrashGo to open more Quests",
+              style: RecycleRushParagraph.medium(color: AppColor.textPrimary),
+              textAlign: TextAlign.center,
+            ),
           )
         ],
       ),
