@@ -54,57 +54,71 @@ class RecycleRushCardQuest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 120,
-      height: 165,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: backgroundColor,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            description,
-            overflow: TextOverflow.clip,
-            style: RecycleRushSubHeadingTypography.large(
-              color: foregroundColor,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          "/quest-detail",
+          arguments: {
+            "title": title,
+            "description": description,
+            "coins": coins,
+            "foregroundColor": foregroundColor,
+            "backgroundColor": backgroundColor,
+          },
+        );
+      },
+      child: Container(
+        width: 120,
+        height: 165,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: backgroundColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              description,
+              overflow: TextOverflow.clip,
+              style: RecycleRushSubHeadingTypography.large(
+                color: foregroundColor,
+              ),
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    IconsaxBold.buy_crypto,
-                    color: foregroundColor,
-                    size: 16,
-                  ),
-                  const SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    "$coins",
-                    style: RecycleRushParagraph.small(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      IconsaxBold.buy_crypto,
                       color: foregroundColor,
+                      size: 16,
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 4),
-              Text(
-                title,
-                style: RecycleRushLabelTypography.xSmall(
-                  color: foregroundColor.withOpacity(0.6),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    Text(
+                      "$coins",
+                      style: RecycleRushParagraph.small(
+                        color: foregroundColor,
+                      ),
+                    ),
+                  ],
                 ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
-          ),
-        ],
+                const SizedBox(height: 4),
+                Text(
+                  title,
+                  style: RecycleRushLabelTypography.xSmall(
+                    color: foregroundColor.withOpacity(0.6),
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

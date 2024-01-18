@@ -5,6 +5,7 @@ import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_up_widget.
 import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
 import 'package:recycle_rush_fe/feature/navigation_bar/presentation/view/nav_bar_view.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
+import 'package:recycle_rush_fe/feature/quests/quest_detail/presentation/view/quest_detail_view.dart';
 import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 void main() {
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
             const RecycleRushViewNavBar(),
         RecycleRushWidgetTrashGo.routeName: (context) =>
             const RecycleRushWidgetTrashGo(),
+        RecycleRushViewQuestDetail.routeName: (
+          context,
+        ) =>
+            const RecycleRushViewQuestDetail(),
       },
       initialRoute: RecycleRushViewNavBar.routeName,
       theme: ThemeData(
