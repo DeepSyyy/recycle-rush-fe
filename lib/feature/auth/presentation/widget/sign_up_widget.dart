@@ -84,7 +84,7 @@ class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
                   ),
                   const SizedBox(height: 40),
                   RecycleRushElevatedButton(
-                    btnColor: RecycleRushColor.gren400,
+                    btnColor: RecycleRushColor.green,
                     btnHeight: 48,
                     btnText: "Sign Up",
                     isEnabled: _isEnableSignIn(),
@@ -169,9 +169,9 @@ class _RecycleRushSignUpWidgetState extends State<RecycleRushSignUpWidget> {
                         fontWeight: FontWeight.w700,
                         height: 1.2,
                         letterSpacing: 0,
-                        color: RecycleRushColor.gren500,
+                        color: RecycleRushColor.green[500]!,
                         decoration: TextDecoration.underline,
-                        decorationColor: RecycleRushColor.gren500,
+                        decorationColor: RecycleRushColor.green[500]!,
                       ),
                     ),
                   )

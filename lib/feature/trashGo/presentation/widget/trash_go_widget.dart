@@ -66,7 +66,7 @@ class _RecycleRushWidgetTrashGoState extends State<RecycleRushWidgetTrashGo> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        backgroundColor: RecycleRushColor.gren400,
+        backgroundColor: RecycleRushColor.green,
         body: Column(
           children: [
             Padding(

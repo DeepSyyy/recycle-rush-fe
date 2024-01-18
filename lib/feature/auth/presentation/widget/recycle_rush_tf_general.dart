@@ -40,7 +40,7 @@ class RecycleRushTfAuthGeneral extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
-              color: RecycleRushColor.purple500,
+              color: RecycleRushColor.purple,
             ),
           ),
         ),
@@ -106,7 +106,7 @@ class _RecycleRushTfPasswordState extends State<RecycleRushTfPassword> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
-              color: RecycleRushColor.purple500,
+              color: RecycleRushColor.purple,
             ),
           ),
         ),
