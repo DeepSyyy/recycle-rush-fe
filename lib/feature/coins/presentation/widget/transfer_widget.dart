@@ -1,4 +1,3 @@
-import 'package:ficonsax/ficonsax.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:recycle_rush_fe/core/styles/app_color.dart';
@@ -18,23 +17,14 @@ class RecyleRushWidgetTransfer extends StatelessWidget {
         child: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
-                    leading: InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Icon(
-                        Iconsax.arrow_left_2,
-                        color: AppColor.textPrimary,
-                        size: 24,
-                      ),
-                    ),
+                    automaticallyImplyLeading: false,
                     backgroundColor: RecycleRushColor.green,
                     bottom: PreferredSize(
-                      preferredSize: const Size.fromHeight(135),
+                      preferredSize: const Size.fromHeight(0),
                       child: Container(),
                     ),
                     flexibleSpace: FlexibleSpaceBar(
-                      background: _appBar(),
+                      background: _appBar(context),
                     ),
                   ),
                 ],
@@ -43,36 +33,30 @@ class RecyleRushWidgetTransfer extends StatelessWidget {
     );
   }
 
-  Container _appBar() {
+  Container _appBar(context) {
     return Container(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 23),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
           Row(
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: const Icon(
                   Iconsax.arrow_left_2,
                   color: AppColor.textPrimary,
                   size: 24,
                 ),
               ),
-              const SizedBox(
-                width: 8,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Transfer",
-                    style: RecycleRushHeadingTypography.xSmall(),
-                  ),
-                ],
-              )
             ],
           ),
+          Text(
+            "Transfer",
+            style: RecycleRushHeadingTypography.xSmall(),
+          )
         ],
       ),
     );
