@@ -2,6 +2,8 @@ import 'package:ficonsax/ficonsax.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
+import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
+import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 class RecycleRushWidgetNavbar extends StatefulWidget {
   const RecycleRushWidgetNavbar({super.key});
@@ -14,15 +16,11 @@ class RecycleRushWidgetNavbar extends StatefulWidget {
 class _RecycleRushWidgetNavbarState extends State<RecycleRushWidgetNavbar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-    ),
+    RecycleRushViewHome(),
     Text(
       'Quest',
     ),
-    Text(
-      'TrashGo',
-    ),
+    RecycleRushWidgetTrashGo(),
     Text(
       'Clan',
     ),
@@ -32,38 +30,47 @@ class _RecycleRushWidgetNavbarState extends State<RecycleRushWidgetNavbar> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(16),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(42),
-          color: Colors.black,
-        ),
-        child: GNav(
-          tabBackgroundColor: const Color(0xff363636),
-          activeColor: Colors.white,
-          duration: const Duration(milliseconds: 1000),
-          gap: 8,
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          tabs: [
-            buttonItem(IconsaxBold.home_1, "Home"),
-            buttonItem(IconsaxBold.trash, "Quest"),
-            buttonItem(IconsaxBold.scanning, "TrashGO"),
-            buttonItem(IconsaxBold.people, "Clan"),
-            buttonItem(IconsaxBold.frame, "Profile")
+    return SafeArea(
+      child: Scaffold(
+        // backgroundColor: Colors.white,
+        body: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Center(
+              child: _widgetOptions.elementAt(_selectedIndex),
+            ),
+            Container(
+              margin: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(42),
+                color: Colors.black,
+              ),
+              child: GNav(
+                tabBackgroundColor: const Color(0xff363636),
+                activeColor: Colors.white,
+                duration: const Duration(milliseconds: 1000),
+                gap: 8,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                tabs: [
+                  buttonItem(IconsaxBold.home_1, "Home"),
+                  buttonItem(IconsaxBold.trash, "Quest"),
+                  buttonItem(IconsaxBold.scanning, "TrashGO"),
+                  buttonItem(IconsaxBold.people, "Clan"),
+                  buttonItem(IconsaxBold.frame, "Profile")
+                ],
+                selectedIndex: _selectedIndex,
+                onTabChange: (index) {
+                  setState(
+                    () {
+                      _selectedIndex = index;
+                    },
+                  );
+                },
+              ),
+            ),
           ],
-          selectedIndex: _selectedIndex,
-          onTabChange: (index) {
-            setState(
-              () {
-                _selectedIndex = index;
-              },
-            );
-          },
         ),
       ),
     );

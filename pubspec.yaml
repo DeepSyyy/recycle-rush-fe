@@ -16,6 +16,8 @@ dependencies:
   flutter_svg: ^2.0.9
   google_nav_bar: ^5.0.6
   ficonsax: ^0.0.3
+  flutter_floating_bottom_bar: ^1.2.0
+  camera: ^0.10.5+9
 
 dev_dependencies:
   flutter_test:

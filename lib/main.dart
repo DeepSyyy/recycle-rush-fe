@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/view/auth_view.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_in_widget.dart';
 import 'package:recycle_rush_fe/feature/auth/presentation/widget/sign_up_widget.dart';
-import 'package:recycle_rush_fe/feature/home/presentation/widget/home_widget.dart';
+import 'package:recycle_rush_fe/feature/home/presentation/view/home_view.dart';
 import 'package:recycle_rush_fe/feature/navigation_bar/presentation/view/nav_bar_view.dart';
-import 'package:recycle_rush_fe/feature/navigation_bar/presentation/widget/nav_bar_widget.dart';
 import 'package:recycle_rush_fe/feature/onboarding/presentation/view/onboarding_view.dart';
+import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/camera_test.dart';
+import 'package:recycle_rush_fe/feature/trashGo/presentation/widget/trash_go_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,10 +26,11 @@ class MyApp extends StatelessWidget {
         RecycleRushViewOnboarding.routeName: (context) =>
             const RecycleRushViewOnboarding(),
         RecycleRushViewAuth.routeName: (context) => const RecycleRushViewAuth(),
-        RecycleRushWidgetHome.routeName: (context) =>
-            const RecycleRushWidgetHome(),
+        RecycleRushViewHome.routeName: (context) => const RecycleRushViewHome(),
         RecycleRushViewNavBar.routeName: (context) =>
             const RecycleRushViewNavBar(),
+        RecycleRushWidgetTrashGo.routeName: (context) =>
+            const RecycleRushWidgetTrashGo(),
       },
       initialRoute: RecycleRushViewNavBar.routeName,
       theme: ThemeData(

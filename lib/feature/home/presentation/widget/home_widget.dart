@@ -4,7 +4,6 @@ import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
 
 class RecycleRushWidgetHome extends StatelessWidget {
-  static const routeName = '/home';
   const RecycleRushWidgetHome({super.key});
 
   @override
@@ -104,83 +103,86 @@ class RecycleRushWidgetHome extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: AppColor.textSecondary,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(32),
-                  topRight: Radius.circular(32),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: const Color(0xff202020),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Coins",
-                          style: RecycleRushLabelTypography.small(
-                            color: AppColor.textSecondary,
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "1.642.134,39",
-                              style: RecycleRushHeadingTypography.large(
-                                  color: AppColor.textSecondary),
-                            ),
-                            const Icon(
-                              Iconsax.eye4,
-                              color: AppColor.textSecondary,
-                              size: 24,
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+            Expanded(
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: AppColor.textSecondary,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(32),
+                    topRight: Radius.circular(32),
                   ),
-                  const SizedBox(height: 14),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(16),
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFFFAFAFA),
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                            width: 2, color: Color(0xFFF4F4F6)),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
+                        color: const Color(0xff202020),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Coins",
+                            style: RecycleRushLabelTypography.small(
+                              color: AppColor.textSecondary,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "1.642.134,39",
+                                style: RecycleRushHeadingTypography.large(
+                                    color: AppColor.textSecondary),
+                              ),
+                              const Icon(
+                                Iconsax.eye4,
+                                color: AppColor.textSecondary,
+                                size: 24,
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "TrashGo",
-                          style: RecycleRushHeadingTypography.small(
-                            color: AppColor.textPrimary,
+                    const SizedBox(height: 14),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFFFAFAFA),
+                        shape: RoundedRectangleBorder(
+                          side: const BorderSide(
+                              width: 2, color: Color(0xFFF4F4F6)),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "TrashGo",
+                            style: RecycleRushHeadingTypography.small(
+                              color: AppColor.textPrimary,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Take trash photo to unlock Quests",
-                          style: RecycleRushLabelTypography.medium(
-                              color: AppColor.textPrimary),
-                        ),
-                      ],
+                          Text(
+                            "Take trash photo to unlock Quests",
+                            style: RecycleRushLabelTypography.medium(
+                                color: AppColor.textPrimary),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
