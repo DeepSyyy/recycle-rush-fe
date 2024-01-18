@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
-import 'package:recycle_rush_fe/feature/home/presentation/widget/home_widget.dart';
 import 'package:recycle_rush_fe/feature/quests/presentation/widget/card_my_quest_widget.dart';
 import 'package:recycle_rush_fe/feature/quests/presentation/widget/card_quest_widget.dart';
 
