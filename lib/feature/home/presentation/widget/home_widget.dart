@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:recycle_rush_fe/core/styles/app_color.dart';
 import 'package:recycle_rush_fe/core/styles/typography.dart';
+import 'package:recycle_rush_fe/feature/coins/presentation/view/coins_view.dart';
 import 'package:recycle_rush_fe/feature/quests/presentation/widget/card_my_quest_widget.dart';
 
 class RecycleRushWidgetHome extends StatelessWidget {
@@ -12,6 +13,7 @@ class RecycleRushWidgetHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: RecycleRushColor.green,
       body: SafeArea(
         bottom: false,
         child: NestedScrollView(
@@ -27,13 +29,13 @@ class RecycleRushWidgetHome extends StatelessWidget {
               ),
             ),
           ],
-          body: _content(),
+          body: _content(context),
         ),
       ),
     );
   }
 
-  Container _content() {
+  Container _content(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       width: double.infinity,
@@ -48,7 +50,13 @@ class RecycleRushWidgetHome extends StatelessWidget {
       child: ListView(
         clipBehavior: Clip.none,
         children: [
-          const RecycleRushContainerCoinsInfo(),
+          GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  RecycleRushViewCoins.routeName,
+                );
+              },
+              child: const RecycleRushContainerCoinsInfo()),
           const SizedBox(height: 22),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
