@@ -6,6 +6,9 @@ class AppColor {
   static const textPrimary = Color(0xff000000);
   static const textSecondary = Color(0xffFFFFFF);
   static final blackWithOpacity = const Color(0xff000000).withOpacity(0.1);
+
+  static const Color textFieldBackground = Color(0xffFAFAFA);
+  static const Color textFieldBorder = Color(0xffF4F4F6);
 }
 
 class RecycleRushColor {
@@ -55,5 +58,22 @@ class RecycleRushColor {
     700: Color(0xff193ddc),
     800: Color(0xff1b34b2),
     900: Color(0xff1c318c),
+  });
+
+  // Yellow
+  static const int _yellowPrimaryValue = 0xffFBBE0C;
+
+  static const MaterialColor yellow = MaterialColor(_yellowPrimaryValue, {
+    50: Color(0xffFFFDEA),
+    100: Color(0xffFFFBC6),
+    200: Color(0xffFFF687),
+    300: Color(0xffFFEA49),
+    400: Color(0xffFFDB1F),
+    500: Color(_yellowPrimaryValue),
+    600: Color(0xffDE9101),
+    700: Color(0xffB86705),
+    800: Color(0xff954F0B),
+    900: Color(0xff7B410C),
+    950: Color(0xff472101),
   });
 }

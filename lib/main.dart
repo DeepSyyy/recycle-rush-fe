@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         RecycleRushWidgetTrashGo.routeName: (context) =>
             const RecycleRushWidgetTrashGo(),
       },
-      initialRoute: RecycleRushViewHome.routeName,
+      initialRoute: RecycleRushViewNavBar.routeName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
